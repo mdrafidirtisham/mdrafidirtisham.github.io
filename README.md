@@ -1,2 +1,1217 @@
 # mdrafidirtisham.github.io
 Personal portfolio — MSc Business Analytics | Data &amp; Marketing Analyst | Python · SQL · Power BI | Published Researcher
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mohammad Rafid Irtisham — Marketing &amp; Data Analyst</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy:#0a0f1e;--navy-mid:#0f1a2e;--navy-card:#111d33;--navy-border:#1a2d4a;
+    --electric:#0ea5e9;--teal:#14b8a6;--amber:#f59e0b;--rose:#f43f5e;--violet:#8b5cf6;
+    --text:#e2e8f0;--text-dim:#94a3b8;--text-faint:#475569;
+    --mono:'Space Mono',monospace;--sans:'Inter',sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--navy);color:var(--text);font-family:var(--sans);font-size:16px;line-height:1.6;overflow-x:hidden;}
+  body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");pointer-events:none;z-index:0;opacity:0.4;}
+
+  /* NAV */
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1rem 3rem;background:rgba(10,15,30,0.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--navy-border);}
+  .nav-logo{font-family:var(--mono);font-size:0.85rem;color:var(--electric);letter-spacing:0.05em;}
+  .nav-links{display:flex;gap:2rem;}
+  .nav-links a{font-size:0.8rem;font-weight:500;color:var(--text-dim);text-decoration:none;letter-spacing:0.04em;text-transform:uppercase;transition:color 0.2s;}
+  .nav-links a:hover{color:var(--electric);}
+  .nav-resume{padding:0.45rem 1.1rem;background:rgba(14,165,233,0.1);border:1px solid var(--electric);border-radius:5px;color:var(--electric) !important;font-size:0.75rem !important;}
+  .nav-resume:hover{background:rgba(14,165,233,0.2) !important;}
+
+  /* HERO */
+  .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:8rem 3rem 4rem;position:relative;overflow:hidden;}
+  .hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(14,165,233,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(14,165,233,0.04) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse 80% 60% at 50% 40%,black,transparent);}
+  .hero-glow{position:absolute;top:20%;left:50%;transform:translateX(-50%);width:600px;height:400px;background:radial-gradient(ellipse,rgba(14,165,233,0.08) 0%,transparent 70%);pointer-events:none;}
+  .eyebrow{font-family:var(--mono);font-size:0.75rem;color:var(--electric);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:1.5rem;display:flex;align-items:center;gap:0.75rem;}
+  .eyebrow::before{content:'';display:block;width:32px;height:1px;background:var(--electric);}
+  @keyframes pulse{0%,100%{opacity:1;}50%{opacity:0.35;}}
+  .live-dot{display:inline-block;width:7px;height:7px;background:var(--teal);border-radius:50%;animation:pulse 2s infinite;margin-right:0.4rem;}
+  .hero h1{font-size:clamp(2.8rem,6vw,5rem);font-weight:700;line-height:1.08;letter-spacing:-0.03em;max-width:760px;}
+  .hero h1 span{color:var(--electric);}
+  .hero-sub{margin-top:1.5rem;font-size:1.05rem;color:var(--text-dim);max-width:560px;line-height:1.75;}
+  .hero-roles{margin-top:1.2rem;display:flex;flex-wrap:wrap;gap:0.5rem;}
+  .role-chip{font-size:0.75rem;padding:0.3rem 0.75rem;border-radius:20px;font-weight:500;}
+  .rc-blue{background:rgba(14,165,233,0.12);color:var(--electric);border:1px solid rgba(14,165,233,0.3);}
+  .rc-teal{background:rgba(20,184,166,0.12);color:var(--teal);border:1px solid rgba(20,184,166,0.3);}
+  .rc-amber{background:rgba(245,158,11,0.12);color:var(--amber);border:1px solid rgba(245,158,11,0.3);}
+  .rc-violet{background:rgba(139,92,246,0.12);color:var(--violet);border:1px solid rgba(139,92,246,0.3);}
+  .hero-tags{margin-top:2rem;display:flex;flex-wrap:wrap;gap:0.55rem;}
+  .tag{font-family:var(--mono);font-size:0.68rem;padding:0.3rem 0.75rem;border:1px solid var(--navy-border);border-radius:4px;color:var(--text-dim);letter-spacing:0.05em;}
+  .tag.active{border-color:var(--electric);color:var(--electric);background:rgba(14,165,233,0.06);}
+  .hero-cta{margin-top:2.5rem;display:flex;gap:1rem;align-items:center;}
+  .btn-primary{padding:0.8rem 2rem;background:var(--electric);color:#000;font-weight:600;font-size:0.85rem;letter-spacing:0.04em;border:none;border-radius:6px;cursor:pointer;text-decoration:none;display:inline-block;transition:background 0.2s,transform 0.15s;}
+  .btn-primary:hover{background:#38bdf8;transform:translateY(-1px);}
+  .btn-ghost{padding:0.8rem 2rem;background:transparent;color:var(--text-dim);font-weight:500;font-size:0.85rem;border:1px solid var(--navy-border);border-radius:6px;cursor:pointer;text-decoration:none;display:inline-block;transition:border-color 0.2s,color 0.2s;}
+  .btn-ghost:hover{border-color:var(--electric);color:var(--electric);}
+
+  /* STATS BAR */
+  .stats-bar{display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid var(--navy-border);border-bottom:1px solid var(--navy-border);}
+  .stat-cell{padding:1.75rem 2rem;border-right:1px solid var(--navy-border);}
+  .stat-cell:last-child{border-right:none;}
+  .stat-num{font-family:var(--mono);font-size:2rem;font-weight:700;color:var(--electric);}
+  .stat-label{font-size:0.72rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:0.08em;margin-top:0.2rem;}
+
+  /* SECTIONS */
+  section{padding:5.5rem 3rem;position:relative;}
+  .section-header{margin-bottom:3rem;}
+  .section-eyebrow{font-family:var(--mono);font-size:0.7rem;color:var(--electric);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:0.6rem;}
+  .section-title{font-size:clamp(1.7rem,3.5vw,2.4rem);font-weight:700;letter-spacing:-0.02em;}
+  .section-divider{width:40px;height:2px;background:var(--electric);margin-top:0.9rem;}
+
+  /* ABOUT */
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;}
+  .about-bio p{color:var(--text-dim);line-height:1.8;margin-bottom:1rem;}
+  .about-bio strong{color:var(--text);}
+  .tools-grid{margin-top:1.5rem;display:flex;flex-wrap:wrap;gap:0.45rem;}
+  .tool-chip{font-family:var(--mono);font-size:0.68rem;padding:0.35rem 0.8rem;background:var(--navy-card);border:1px solid var(--navy-border);border-radius:4px;color:var(--text-dim);}
+  .lang-row{display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:1.25rem;}
+  .lang-chip{font-size:0.75rem;padding:0.35rem 0.85rem;border-radius:20px;background:rgba(139,92,246,0.1);border:1px solid rgba(139,92,246,0.25);color:var(--violet);}
+
+  /* SKILLS */
+  .skills-list{margin-top:1.5rem;}
+  .skill-row{margin-bottom:1.15rem;}
+  .skill-meta{display:flex;justify-content:space-between;font-size:0.8rem;margin-bottom:0.38rem;}
+  .skill-name{color:var(--text);font-weight:500;}
+  .skill-pct{font-family:var(--mono);color:var(--electric);font-size:0.72rem;}
+  .skill-bar-bg{height:4px;background:var(--navy-border);border-radius:2px;overflow:hidden;}
+  .skill-bar-fill{height:100%;border-radius:2px;width:0;transition:width 1.2s cubic-bezier(0.4,0,0.2,1);}
+
+  /* EXPERIENCE */
+  #experience{background:var(--navy-mid);}
+  .exp-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;}
+  .exp-card{background:var(--navy-card);border:1px solid var(--navy-border);border-radius:10px;padding:1.75rem;transition:border-color 0.3s,transform 0.2s;}
+  .exp-card:hover{border-color:var(--electric);transform:translateY(-2px);}
+  .exp-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1rem;gap:1rem;}
+  .exp-title{font-size:1rem;font-weight:700;}
+  .exp-org{color:var(--electric);font-size:0.82rem;margin-top:0.2rem;}
+  .exp-dates{font-family:var(--mono);font-size:0.68rem;color:var(--text-faint);white-space:nowrap;margin-top:0.1rem;}
+  .exp-badge{flex-shrink:0;font-size:1.4rem;width:44px;height:44px;border-radius:8px;display:flex;align-items:center;justify-content:center;}
+  .exp-bullets{list-style:none;}
+  .exp-bullets li{display:flex;gap:0.65rem;align-items:flex-start;font-size:0.82rem;color:var(--text-dim);margin-bottom:0.55rem;line-height:1.6;}
+  .exp-bullets li::before{content:'▸';color:var(--electric);flex-shrink:0;margin-top:0.05rem;}
+  .exp-bullets li strong{color:var(--text);}
+  .exp-kpi{display:inline-block;font-family:var(--mono);font-size:0.72rem;padding:0.2rem 0.55rem;border-radius:3px;background:rgba(14,165,233,0.1);color:var(--electric);border:1px solid rgba(14,165,233,0.2);margin-left:0.3rem;}
+  .exp-kpi.green{background:rgba(20,184,166,0.1);color:var(--teal);border-color:rgba(20,184,166,0.2);}
+  .exp-kpi.amber{background:rgba(245,158,11,0.1);color:var(--amber);border-color:rgba(245,158,11,0.2);}
+
+  /* PROJECTS */
+  #projects{background:var(--navy);}
+  .project-card{background:var(--navy-card);border:1px solid var(--navy-border);border-radius:12px;overflow:hidden;margin-bottom:2.5rem;transition:border-color 0.3s,transform 0.2s;}
+  .project-card:hover{border-color:var(--electric);transform:translateY(-2px);}
+  .project-header{padding:1.75rem 2.25rem 1.5rem;border-bottom:1px solid var(--navy-border);display:flex;align-items:flex-start;justify-content:space-between;gap:2rem;}
+  .project-index{font-family:var(--mono);font-size:0.68rem;color:var(--electric);letter-spacing:0.1em;}
+  .project-title{font-size:1.3rem;font-weight:700;letter-spacing:-0.02em;margin-top:0.35rem;}
+  .project-module{font-size:0.75rem;color:var(--text-faint);margin-top:0.25rem;font-family:var(--mono);}
+  .project-tags{display:flex;flex-wrap:wrap;gap:0.35rem;margin-top:0.65rem;}
+  .proj-tag{font-size:0.66rem;padding:0.18rem 0.55rem;border-radius:3px;font-weight:500;letter-spacing:0.04em;}
+  .proj-tag.ml{background:rgba(14,165,233,0.12);color:var(--electric);}
+  .proj-tag.stats{background:rgba(20,184,166,0.12);color:var(--teal);}
+  .proj-tag.viz{background:rgba(245,158,11,0.12);color:var(--amber);}
+  .proj-tag.big{background:rgba(244,63,94,0.12);color:var(--rose);}
+  .proj-tag.violet{background:rgba(139,92,246,0.12);color:var(--violet);}
+  .project-badge{flex-shrink:0;width:52px;height:52px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;}
+  .project-body{display:grid;grid-template-columns:1fr 1fr;}
+  .project-desc{padding:1.75rem 2.25rem;border-right:1px solid var(--navy-border);}
+  .project-desc p{color:var(--text-dim);font-size:0.88rem;line-height:1.75;margin-bottom:0.9rem;}
+  .project-desc p:last-child{margin-bottom:0;}
+  .project-desc strong{color:var(--text);}
+  .project-viz{padding:1.75rem 2.25rem;}
+  .viz-title{font-family:var(--mono);font-size:0.66rem;color:var(--electric);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:1.1rem;}
+  .chart-wrap{width:100%;}
+  svg{width:100%;display:block;}
+  .metrics-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.65rem;margin-top:0.85rem;}
+  .metric-card{background:var(--navy-mid);border:1px solid var(--navy-border);border-radius:8px;padding:0.9rem 1.1rem;}
+  .metric-val{font-family:var(--mono);font-size:1.3rem;font-weight:700;}
+  .metric-label{font-size:0.7rem;color:var(--text-faint);margin-top:0.15rem;}
+  .metric-card.blue .metric-val{color:var(--electric);}
+  .metric-card.teal .metric-val{color:var(--teal);}
+  .metric-card.amber .metric-val{color:var(--amber);}
+  .metric-card.rose .metric-val{color:var(--rose);}
+  .metric-card.violet .metric-val{color:var(--violet);}
+  .findings-list{list-style:none;margin-top:0.85rem;}
+  .findings-list li{display:flex;gap:0.65rem;align-items:flex-start;font-size:0.83rem;color:var(--text-dim);margin-bottom:0.6rem;}
+  .findings-list li::before{content:'▸';color:var(--electric);flex-shrink:0;margin-top:0.05rem;}
+
+  /* PUBLICATIONS */
+  #publications{background:var(--navy-mid);}
+  .pub-card{background:var(--navy-card);border:1px solid var(--navy-border);border-left:3px solid var(--electric);border-radius:8px;padding:1.5rem 1.75rem;margin-bottom:1.25rem;transition:transform 0.2s;}
+  .pub-card:hover{transform:translateX(4px);}
+  .pub-type{font-family:var(--mono);font-size:0.65rem;color:var(--electric);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.5rem;}
+  .pub-title{font-size:0.92rem;font-weight:600;color:var(--text);line-height:1.5;margin-bottom:0.4rem;}
+  .pub-meta{font-size:0.78rem;color:var(--text-dim);}
+  .pub-meta a{color:var(--teal);text-decoration:none;}
+  .pub-meta a:hover{text-decoration:underline;}
+
+  /* EDUCATION */
+  #education{background:var(--navy);}
+  .edu-exp-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;}
+  .timeline{position:relative;padding-left:2rem;}
+  .timeline::before{content:'';position:absolute;left:0;top:0;bottom:0;width:1px;background:var(--navy-border);}
+  .timeline-item{position:relative;margin-bottom:2.25rem;padding-left:1.5rem;}
+  .timeline-dot{position:absolute;left:-2.4rem;top:0.35rem;width:10px;height:10px;border-radius:50%;background:var(--electric);border:2px solid var(--navy);}
+  .timeline-year{font-family:var(--mono);font-size:0.7rem;color:var(--electric);letter-spacing:0.1em;}
+  .timeline-role{font-size:1rem;font-weight:600;margin-top:0.2rem;}
+  .timeline-org{color:var(--text-dim);font-size:0.85rem;}
+  .timeline-detail{color:var(--text-faint);font-size:0.8rem;margin-top:0.4rem;line-height:1.6;}
+  .grade-chip{display:inline-block;font-family:var(--mono);font-size:0.68rem;padding:0.15rem 0.5rem;background:rgba(20,184,166,0.1);border:1px solid rgba(20,184,166,0.25);color:var(--teal);border-radius:3px;margin-right:0.3rem;}
+
+  /* CONTACT */
+  #contact{background:var(--navy-mid);}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;}
+  .contact-text p{color:var(--text-dim);line-height:1.8;}
+  .contact-links{margin-top:2rem;display:flex;flex-direction:column;gap:1rem;}
+  .contact-link{display:flex;align-items:center;gap:1rem;font-size:0.87rem;color:var(--text-dim);text-decoration:none;transition:color 0.2s;}
+  .contact-link:hover{color:var(--electric);}
+  .contact-link-icon{width:36px;height:36px;background:var(--navy-card);border:1px solid var(--navy-border);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:0.95rem;flex-shrink:0;}
+  .contact-form{display:flex;flex-direction:column;gap:0.9rem;}
+  .form-input{background:var(--navy-card);border:1px solid var(--navy-border);border-radius:8px;padding:0.8rem 1rem;color:var(--text);font-family:var(--sans);font-size:0.87rem;outline:none;transition:border-color 0.2s;}
+  .form-input:focus{border-color:var(--electric);}
+  .form-input::placeholder{color:var(--text-faint);}
+  textarea.form-input{min-height:110px;resize:vertical;}
+
+  /* FOOTER */
+  footer{border-top:1px solid var(--navy-border);padding:1.75rem 3rem;display:flex;justify-content:space-between;align-items:center;}
+  footer p{font-family:var(--mono);font-size:0.7rem;color:var(--text-faint);}
+
+  /* ANIMS */
+  @keyframes fadeUp{from{opacity:0;transform:translateY(22px);}to{opacity:1;transform:translateY(0);}}
+  .fade-up{animation:fadeUp 0.7s ease both;}
+  .fade-up-1{animation-delay:0.1s;}
+  .fade-up-2{animation-delay:0.25s;}
+  .fade-up-3{animation-delay:0.4s;}
+  .fade-up-4{animation-delay:0.55s;}
+
+  /* RESPONSIVE */
+  @media(max-width:900px){
+    nav{padding:1rem 1.5rem;}
+    .nav-links{display:none;}
+    section{padding:4rem 1.5rem;}
+    .stats-bar{grid-template-columns:1fr 1fr;}
+    .stat-cell{border-right:none;border-bottom:1px solid var(--navy-border);}
+    .about-grid,.project-body,.contact-grid,.edu-exp-grid,.exp-grid{grid-template-columns:1fr;}
+    .project-desc{border-right:none;border-bottom:1px solid var(--navy-border);}
+    .hero{padding:7rem 1.5rem 3rem;}
+  }
+  .testimonial-card:hover{border-color:var(--electric);transform:translateY(-2px);}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">MRI // PORTFOLIO</div>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#publications">Publications</a>
+    <a href="#education">Education</a>
+    <a href="#contact" class="nav-resume">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-grid"></div>
+  <div class="hero-glow"></div>
+
+  <div class="eyebrow fade-up fade-up-1">
+    <span class="live-dot"></span> Open to new opportunities · Birmingham, UK
+  </div>
+
+  <h1 class="fade-up fade-up-2">Mohammad Rafid<br><span>Irtisham</span></h1>
+
+  <div class="hero-roles fade-up fade-up-2">
+    <span class="role-chip rc-blue">Data Analyst</span>
+    <span class="role-chip rc-teal">Marketing Analyst</span>
+    <span class="role-chip rc-amber">CRM &amp; Loyalty Analyst</span>
+    <span class="role-chip rc-violet">Big Data Enthusiast</span>
+  </div>
+
+  <p class="hero-sub fade-up fade-up-3">
+    MSc Business Analytics graduate (Aston University, 2024) currently working as a Marketing Analyst at Emporia Centre Ltd., UK. Specialises in customer segmentation, loyalty analytics, CRM reporting, and ML modelling. Published researcher with <strong style="color:var(--text)">peer-reviewed work in Industry 5.0 and IoT supply chains</strong>. Proficient in Python, SQL, Power BI, Salesforce, and Google Analytics.
+  </p>
+
+  <div class="hero-tags fade-up fade-up-4">
+    <span class="tag active">Python</span>
+    <span class="tag active">SQL</span>
+    <span class="tag active">Power BI</span>
+    <span class="tag active">Tableau</span>
+    <span class="tag active">Azure Data Studio</span>
+    <span class="tag active">IBM Modeler</span>
+    <span class="tag active">Salesforce Mktg Cloud</span>
+    <span class="tag active">Google Analytics</span>
+    <span class="tag">SPSS</span>
+    <span class="tag">Stata</span>
+    <span class="tag">Machine Learning</span>
+    <span class="tag">Econometrics</span>
+    <span class="tag">DEA / SFA</span>
+    <span class="tag">ARIMA</span>
+    <span class="tag">Excel (Advanced)</span>
+  </div>
+
+  <div class="hero-cta fade-up fade-up-4">
+    <a href="#projects" class="btn-primary">View Projects</a>
+    <a href="#contact" class="btn-ghost">Get in Touch</a>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stat-cell">
+    <div class="stat-num" data-target="5" data-suffix="+">0</div>
+    <div class="stat-label">Years Analytics Experience</div>
+  </div>
+  <div class="stat-cell">
+    <div class="stat-num" data-target="96" data-suffix="%">0</div>
+    <div class="stat-label">Best ML Model Accuracy</div>
+  </div>
+  <div class="stat-cell">
+    <div class="stat-num" data-target="499">0</div>
+    <div class="stat-label">EPL Players Modelled</div>
+  </div>
+  <div class="stat-cell">
+    <div class="stat-num" data-target="2">0</div>
+    <div class="stat-label">Research Publications</div>
+  </div>
+  <div class="stat-cell">
+    <div class="stat-num" data-target="5">0</div>
+    <div class="stat-label">Languages Spoken</div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-header">
+    <p class="section-eyebrow">01 // About</p>
+    <h2 class="section-title">Analyst. Researcher. Problem Solver.</h2>
+    <div class="section-divider"></div>
+  </div>
+  <div class="about-grid">
+    <div class="about-bio">
+      <p>
+        I'm a <strong>Marketing &amp; Data Analyst</strong> based in Birmingham, UK, currently at <strong>Emporia Centre Ltd.</strong> where I work across customer segmentation, loyalty KPI dashboards, and CRM analytics. I hold an MSc in Business Analytics from Aston University (2024) and a BBA in Marketing from North South University, Dhaka.
+      </p>
+      <p>
+        At Emporia Centre, I use <strong>MySQL Azure</strong> to extract large datasets, build refreshable Power BI dashboards, and run lifestyle segmentation studies — driving a <strong>21% increase in customer engagement</strong> and an 11% uplift in conversion rate. I also served as a <strong>Postgraduate Mentor</strong> at Aston and completed a Business Consultancy internship at <strong>Aston Business Clinic</strong>.
+      </p>
+      <p>
+        My academic work spans <strong>ML model benchmarking, DEA frontier analysis, stochastic frontier models, ARIMA forecasting, cluster analysis, and conjoint analysis</strong>. I apply business frameworks including <strong>SWOT, PESTLE, and Competitor Benchmarking</strong> to translate data into strategy. I'm a published co-author on IoT and supply chain analytics (IGI Global, 2026), with a full repository entry at Michigan Tech.
+      </p>
+
+      <div class="tools-grid">
+        <span class="tool-chip">Python / Pandas</span>
+        <span class="tool-chip">SQL</span>
+        <span class="tool-chip">Power BI</span>
+        <span class="tool-chip">Tableau</span>
+        <span class="tool-chip">MySQL Azure</span>
+        <span class="tool-chip">IBM Modeler</span>
+        <span class="tool-chip">Salesforce Mktg Cloud</span>
+        <span class="tool-chip">Google Analytics</span>
+        <span class="tool-chip">Scikit-learn</span>
+        <span class="tool-chip">SPSS</span>
+        <span class="tool-chip">Stata</span>
+        <span class="tool-chip">PIM-DEA</span>
+        <span class="tool-chip">Excel (Advanced)</span>
+        <span class="tool-chip">ARIMA</span>
+        <span class="tool-chip">Decision Modelling</span>
+        <span class="tool-chip">Linear Programming</span>
+        <span class="tool-chip">NumPy</span>
+        <span class="tool-chip">SQL (Azure / Postgres)</span>
+        <span class="tool-chip">SWOT / PESTLE</span>
+        <span class="tool-chip">Competitor Benchmarking</span>
+        <span class="tool-chip">Lindo / Lingo (LP)</span>
+      </div>
+
+      <p style="font-family:var(--mono);font-size:0.7rem;color:var(--amber);letter-spacing:0.1em;text-transform:uppercase;margin-top:1.5rem;margin-bottom:0.5rem;">Certifications</p>
+      <div style="display:flex;flex-wrap:wrap;gap:0.45rem;margin-bottom:1.25rem;">
+        <span style="font-size:0.73rem;padding:0.3rem 0.75rem;border-radius:4px;background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.2);color:var(--amber);">Advanced Google Web Analytics</span>
+        <span style="font-size:0.73rem;padding:0.3rem 0.75rem;border-radius:4px;background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.2);color:var(--amber);">Data Analytics in Power BI — DataCamp</span>
+        <span style="font-size:0.73rem;padding:0.3rem 0.75rem;border-radius:4px;background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.2);color:var(--amber);">Data Analytics in Spreadsheets — DataCamp</span>
+        <span style="font-size:0.73rem;padding:0.3rem 0.75rem;border-radius:4px;background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.2);color:var(--amber);">Python Crash Course — Google</span>
+        <span style="font-size:0.73rem;padding:0.3rem 0.75rem;border-radius:4px;background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.2);color:var(--amber);">Excel for Data &amp; Business Analytics — Excel Basement</span>
+        <span style="font-size:0.73rem;padding:0.3rem 0.75rem;border-radius:4px;background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.2);color:var(--amber);">Tableau — Simplilearn</span>
+        <span style="font-size:0.73rem;padding:0.3rem 0.75rem;border-radius:4px;background:rgba(20,184,166,0.08);border:1px solid rgba(20,184,166,0.2);color:var(--teal);">Safeguarding Training — Fircroft College (Certified)</span>
+        <span style="font-size:0.73rem;padding:0.3rem 0.75rem;border-radius:4px;background:rgba(20,184,166,0.08);border:1px solid rgba(20,184,166,0.2);color:var(--teal);">Level 5 Award in Education &amp; Training (HE) — UK Regulated (Certified)</span>
+      </div>
+      <p style="font-family:var(--mono);font-size:0.7rem;color:var(--violet);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.5rem;">Languages</p>
+      <div class="lang-row">
+        <span class="lang-chip">English — Fluent</span>
+        <span class="lang-chip">Bangla — Native</span>
+        <span class="lang-chip">Urdu — Fluent</span>
+        <span class="lang-chip">Hindi — Fluent</span>
+        <span class="lang-chip">Arabic — Beginner</span>
+      </div>
+      <p style="font-family:var(--mono);font-size:0.7rem;color:var(--teal);letter-spacing:0.1em;text-transform:uppercase;margin-top:1.25rem;margin-bottom:0.5rem;">Interests</p>
+      <p style="font-size:0.82rem;color:var(--text-dim);line-height:1.7;">Continuous learning &amp; problem solving · Sudoku · Chess (beginner) · Fitness · Behavioural Psychology · Reading</p>
+    </div>
+
+    <div>
+      <p style="font-family:var(--mono);font-size:0.7rem;color:var(--electric);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:1.1rem;">Core Competencies</p>
+      <div class="skills-list" id="skills-list">
+        <div class="skill-row">
+          <div class="skill-meta"><span class="skill-name">Machine Learning &amp; Predictive Modelling</span><span class="skill-pct">92%</span></div>
+          <div class="skill-bar-bg"><div class="skill-bar-fill" data-pct="92" style="background:linear-gradient(90deg,#0ea5e9,#14b8a6)"></div></div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-meta"><span class="skill-name">SQL &amp; Database Analytics</span><span class="skill-pct">88%</span></div>
+          <div class="skill-bar-bg"><div class="skill-bar-fill" data-pct="88" style="background:linear-gradient(90deg,#14b8a6,#0ea5e9)"></div></div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-meta"><span class="skill-name">Power BI / Tableau / Data Viz</span><span class="skill-pct">87%</span></div>
+          <div class="skill-bar-bg"><div class="skill-bar-fill" data-pct="87" style="background:linear-gradient(90deg,#f59e0b,#f43f5e)"></div></div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-meta"><span class="skill-name">Statistical &amp; Econometric Analysis</span><span class="skill-pct">85%</span></div>
+          <div class="skill-bar-bg"><div class="skill-bar-fill" data-pct="85" style="background:linear-gradient(90deg,#0ea5e9,#14b8a6)"></div></div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-meta"><span class="skill-name">Python (Pandas, Sklearn, Matplotlib)</span><span class="skill-pct">86%</span></div>
+          <div class="skill-bar-bg"><div class="skill-bar-fill" data-pct="86" style="background:linear-gradient(90deg,#8b5cf6,#0ea5e9)"></div></div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-meta"><span class="skill-name">Marketing Analytics &amp; CRM</span><span class="skill-pct">84%</span></div>
+          <div class="skill-bar-bg"><div class="skill-bar-fill" data-pct="84" style="background:linear-gradient(90deg,#f43f5e,#f59e0b)"></div></div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-meta"><span class="skill-name">Time Series &amp; Forecasting</span><span class="skill-pct">80%</span></div>
+          <div class="skill-bar-bg"><div class="skill-bar-fill" data-pct="80" style="background:linear-gradient(90deg,#14b8a6,#8b5cf6)"></div></div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-meta"><span class="skill-name">DEA &amp; Frontier Efficiency Analysis</span><span class="skill-pct">82%</span></div>
+          <div class="skill-bar-bg"><div class="skill-bar-fill" data-pct="82" style="background:linear-gradient(90deg,#0ea5e9,#14b8a6)"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-header">
+    <p class="section-eyebrow">02 // Experience</p>
+    <h2 class="section-title">Professional History</h2>
+    <div class="section-divider"></div>
+  </div>
+  <div class="exp-grid">
+
+    <div class="exp-card" style="border-top:2px solid var(--electric);">
+      <div class="exp-header">
+        <div>
+          <p class="exp-title">Marketing Analyst <span style="font-size:0.68rem;padding:0.15rem 0.5rem;background:rgba(20,184,166,0.12);color:var(--teal);border:1px solid rgba(20,184,166,0.25);border-radius:3px;margin-left:0.4rem;">Current</span></p>
+          <p class="exp-org">Emporia Centre Ltd. — UK</p>
+          <p class="exp-dates">Jan 2024 – Present</p>
+        </div>
+        <div class="exp-badge" style="background:rgba(14,165,233,0.1);">📊</div>
+      </div>
+      <ul class="exp-bullets">
+        <li>Extract large datasets via <strong>MySQL Azure</strong> to analyse current vs historical customer data, identifying growth and retention opportunities.</li>
+        <li>Conducted lifestyle segmentation and churn monitoring, delivering actionable insights that drove a <strong>21% increase in customer engagement</strong> and <strong>11% uplift in conversion rate</strong>. <span class="exp-kpi green">+21% engagement</span></li>
+        <li>Built and maintain <strong>Power BI dashboards &amp; refreshable Excel reports</strong> on loyalty programme KPIs, improving visibility across CRM and digital teams.</li>
+        <li>Deliver weekly, monthly, and quarterly performance reports presenting internal and affiliate insights to <strong>senior stakeholders</strong>.</li>
+        <li>Solely led ONS research project under <strong>GDPR compliance</strong>, significantly boosting customer engagement and sales pipeline.</li>
+        <li>Support strategy building for targeted campaigns, improving <strong>ROI on department budget</strong>.</li>
+      </ul>
+    </div>
+
+    <div class="exp-card">
+      <div class="exp-header">
+        <div>
+          <p class="exp-title">Postgraduate Mentor</p>
+          <p class="exp-org">Aston University — Birmingham, UK</p>
+          <p class="exp-dates">Jul 2023 – Jan 2024</p>
+        </div>
+        <div class="exp-badge" style="background:rgba(139,92,246,0.1);">🎓</div>
+      </div>
+      <ul class="exp-bullets">
+        <li>Mentored MSc students in <strong>statistical modelling, Python analytics, and project delivery</strong>, improving satisfaction and performance. <span class="exp-kpi green">+20% performance</span></li>
+        <li>Enhanced project delivery accuracy by introducing <strong>structured planning and time management</strong> frameworks. <span class="exp-kpi">+30% accuracy</span></li>
+        <li>Maintained <strong>90% student engagement rate</strong> across interactive MS Teams and Office sessions throughout the academic year.</li>
+      </ul>
+    </div>
+
+    <div class="exp-card">
+      <div class="exp-header">
+        <div>
+          <p class="exp-title">Learning Support Assistant</p>
+          <p class="exp-org">Solihull College &amp; University Centre — Birmingham, UK</p>
+          <p class="exp-dates">May 2023 – Jan 2024</p>
+        </div>
+        <div class="exp-badge" style="background:rgba(20,184,166,0.1);">🤝</div>
+      </div>
+      <ul class="exp-bullets">
+        <li>Delivered personalised 1-to-1 support to adult learners with <strong>dyslexia, ADHD, ASD, and mental health challenges</strong>, maintaining detailed progress records to drive targeted interventions.</li>
+        <li>Guided students through <strong>Access to Higher Education Diploma</strong>, securing successful university placements for multiple learners.</li>
+        <li>Collaborated with tutors and welfare officers to design <strong>tailored individual support plans</strong>; assisted in-class delivery across humanities, health, and social sciences.</li>
+        <li>Mentored disengaged adult learners, rebuilding confidence and setting clear academic goals. Upheld <strong>UK safeguarding legislation</strong> across a vulnerable learner population of 100+ students.</li>
+      </ul>
+    </div>
+
+    <div class="exp-card">
+      <div class="exp-header">
+        <div>
+          <p class="exp-title">Business Consultant (Internship)</p>
+          <p class="exp-org">Aston Business Clinic — Birmingham, UK</p>
+          <p class="exp-dates">Oct 2023 – Dec 2023</p>
+        </div>
+        <div class="exp-badge" style="background:rgba(245,158,11,0.1);">💼</div>
+      </div>
+      <ul class="exp-bullets">
+        <li>Conducted primary &amp; secondary market research using <strong>SWOT, PESTLE, and competitor benchmarking</strong> frameworks, identifying key opportunities in the corporate mental health and healthy aging sector.</li>
+        <li>Built and presented an innovative prototype addressing <strong>physical, mental, and social wellbeing</strong> for corporate employees, backed by an evidence-based strategic report.</li>
+        <li>Delivered complex analytical findings persuasively to <strong>academic supervisors and external client stakeholders</strong>, strengthening client competitive positioning.</li>
+      </ul>
+    </div>
+
+    <div class="exp-card">
+      <div class="exp-header">
+        <div>
+          <p class="exp-title">Safeguarding Officer</p>
+          <p class="exp-org">OSG Security — Fircroft College of Adult Education, UK</p>
+          <p class="exp-dates">May 2023 – Jan 2024</p>
+        </div>
+        <div class="exp-badge" style="background:rgba(244,63,94,0.1);">🛡️</div>
+      </div>
+      <ul class="exp-bullets">
+        <li>Enforced safeguarding policies ensuring a safe learning environment, responding proactively to concerns across <strong>100+ students and staff</strong>.</li>
+        <li>Conducted <strong>risk assessments and training sessions</strong>, enhancing safety awareness among adult learners and staff.</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-header">
+    <p class="section-eyebrow">03 // Projects</p>
+    <h2 class="section-title">Selected Analytical Work</h2>
+    <div class="section-divider"></div>
+  </div>
+
+  <!-- PROJECT 1 -->
+  <div class="project-card">
+    <div class="project-header">
+      <div>
+        <p class="project-index">PROJECT 01</p>
+        <h3 class="project-title">Premier League Player Performance Analysis</h3>
+        <p class="project-module">BNM862 — Performance Analytics · Aston University · Grade: 76%</p>
+        <div class="project-tags">
+          <span class="proj-tag stats">PIM-DEA</span>
+          <span class="proj-tag ml">SFA</span>
+          <span class="proj-tag viz">Stata</span>
+          <span class="proj-tag stats">Translog</span>
+          <span class="proj-tag ml">COLS / MOLS</span>
+        </div>
+      </div>
+      <div class="project-badge" style="background:rgba(14,165,233,0.1);">⚽</div>
+    </div>
+    <div class="project-body">
+      <div class="project-desc">
+        <p>Evaluated the technical efficiency of <strong>499 Premier League players</strong> using Data Envelopment Analysis (CRS &amp; VRS orientations) and three econometric frontier models: COLS, MOLS, and SFA.</p>
+        <p>After removing goalkeepers and cleaning outliers, ran <strong>PIM-DEA</strong> with both univariate (1 input / 1 output) and bivariate (1 input / 2 outputs) specifications. Mohammad Salah was the sole efficient player on the CRS frontier. Chose two underperforming forwards — Che Adams and Michail Antonio — for deep-dive benchmarking.</p>
+        <p>Selected a <strong>Translog production function</strong> over Cobb-Douglas following diagnostic testing (RESET test confirmed omitted variables in C-D). SFA-EXP-BC model returned the highest and most realistic efficiency estimates.</p>
+        <ul class="findings-list">
+          <li>xG and xAG had strongest correlations with Goals+Assists (r = 0.904 and 0.836)</li>
+          <li>SFA noise variance exceeded inefficiency variance — confirms stochastic noise in football data</li>
+          <li>VRS models more appropriate than CRS — smaller DMUs treated more fairly on frontier</li>
+          <li>Translog 2nd-order terms jointly significant (F = 24.67, p &lt; 0.001)</li>
+        </ul>
+      </div>
+      <div class="project-viz">
+        <p class="viz-title">▸ Efficiency Scores Across All Models</p>
+        <div class="chart-wrap">
+          <svg viewBox="0 0 360 270" xmlns="http://www.w3.org/2000/svg" style="font-family:'Space Mono',monospace">
+            <rect width="360" height="270" fill="#111d33" rx="8"/>
+            <line x1="86" y1="20" x2="340" y2="20" stroke="#1a2d4a" stroke-width="1"/>
+            <line x1="86" y1="50" x2="340" y2="50" stroke="#1a2d4a" stroke-width="1"/>
+            <line x1="86" y1="80" x2="340" y2="80" stroke="#1a2d4a" stroke-width="1"/>
+            <line x1="86" y1="110" x2="340" y2="110" stroke="#1a2d4a" stroke-width="1"/>
+            <line x1="86" y1="140" x2="340" y2="140" stroke="#1a2d4a" stroke-width="1"/>
+            <line x1="86" y1="170" x2="340" y2="170" stroke="#1a2d4a" stroke-width="1"/>
+            <line x1="86" y1="200" x2="340" y2="200" stroke="#1a2d4a" stroke-width="1"/>
+            <text x="82" y="214" text-anchor="end" fill="#475569" font-size="7.5">CRS 1in1out</text>
+            <text x="82" y="184" text-anchor="end" fill="#475569" font-size="7.5">VRS 1in1out</text>
+            <text x="82" y="154" text-anchor="end" fill="#475569" font-size="7.5">CRS 1in2out</text>
+            <text x="82" y="124" text-anchor="end" fill="#475569" font-size="7.5">VRS 1in2out</text>
+            <text x="82" y="94"  text-anchor="end" fill="#475569" font-size="7.5">MOLS-HN</text>
+            <text x="82" y="64"  text-anchor="end" fill="#475569" font-size="7.5">SFA-EXP-BC</text>
+            <text x="82" y="34"  text-anchor="end" fill="#475569" font-size="7.5">pp-COLS</text>
+            <!-- Bars: scale 0-100 maps to 0-254px -->
+            <!-- CRS 1in1out: Adams 32.41, Michail 48.61 -->
+            <rect x="86" y="202" width="82"  height="12" fill="#0ea5e9" rx="2" opacity="0.8"/>
+            <text x="172" y="212" fill="#0ea5e9" font-size="7">32.4%</text>
+            <rect x="86" y="190" width="123" height="10" fill="#f59e0b" rx="2" opacity="0.6"/>
+            <text x="213" y="199" fill="#f59e0b" font-size="7">48.6%</text>
+            <!-- VRS 1in1out: Adams 32.41, Michail 50 -->
+            <rect x="86" y="172" width="82"  height="12" fill="#0ea5e9" rx="2" opacity="0.8"/>
+            <text x="172" y="182" fill="#0ea5e9" font-size="7">32.4%</text>
+            <rect x="86" y="160" width="127" height="10" fill="#f59e0b" rx="2" opacity="0.6"/>
+            <text x="217" y="169" fill="#f59e0b" font-size="7">50%</text>
+            <!-- CRS 1in2out: 35.51, 48.79 -->
+            <rect x="86" y="142" width="90"  height="12" fill="#0ea5e9" rx="2" opacity="0.9"/>
+            <text x="180" y="152" fill="#0ea5e9" font-size="7">35.5%</text>
+            <rect x="86" y="130" width="124" height="10" fill="#f59e0b" rx="2" opacity="0.6"/>
+            <text x="214" y="139" fill="#f59e0b" font-size="7">48.8%</text>
+            <!-- VRS 1in2out: 35.68, 61.54 -->
+            <rect x="86" y="112" width="91"  height="12" fill="#0ea5e9" rx="2" opacity="0.9"/>
+            <text x="181" y="122" fill="#0ea5e9" font-size="7">35.7%</text>
+            <rect x="86" y="100" width="156" height="10" fill="#f59e0b" rx="2" opacity="0.7"/>
+            <text x="246" y="109" fill="#f59e0b" font-size="7">61.5%</text>
+            <!-- MOLS-HN: 77.16, 64.48 -->
+            <rect x="86" y="82"  width="196" height="12" fill="#14b8a6" rx="2" opacity="0.75"/>
+            <text x="286" y="92" fill="#14b8a6" font-size="7">77.2%</text>
+            <rect x="86" y="70"  width="164" height="10" fill="#14b8a6" rx="2" opacity="0.55"/>
+            <text x="254" y="79" fill="#14b8a6" font-size="7">64.5%</text>
+            <!-- SFA-EXP-BC: 83.33, 80.36 -->
+            <rect x="86" y="52"  width="212" height="12" fill="#14b8a6" rx="2"/>
+            <text x="302" y="62" fill="#14b8a6" font-size="7">83.3%</text>
+            <rect x="86" y="40"  width="204" height="10" fill="#14b8a6" rx="2" opacity="0.8"/>
+            <text x="294" y="49" fill="#14b8a6" font-size="7">80.4%</text>
+            <!-- pp-COLS: 35.31, 29.51 -->
+            <rect x="86" y="22"  width="90"  height="12" fill="#f43f5e" rx="2" opacity="0.75"/>
+            <text x="180" y="32" fill="#f43f5e" font-size="7">35.3%</text>
+            <rect x="86" y="10"  width="75"  height="10" fill="#f43f5e" rx="2" opacity="0.55"/>
+            <text x="165" y="19" fill="#f43f5e" font-size="7">29.5%</text>
+            <!-- Legend -->
+            <rect x="86" y="228" width="8" height="7" fill="#0ea5e9" rx="1"/>
+            <text x="98" y="235" fill="#94a3b8" font-size="7.5">Che Adams</text>
+            <rect x="160" y="228" width="8" height="7" fill="#f59e0b" rx="1"/>
+            <text x="172" y="235" fill="#94a3b8" font-size="7.5">Michail Antonio</text>
+            <rect x="255" y="228" width="8" height="7" fill="#14b8a6" rx="1"/>
+            <text x="267" y="235" fill="#94a3b8" font-size="7.5">Econometric</text>
+          </svg>
+        </div>
+        <div class="metrics-grid">
+          <div class="metric-card blue"><div class="metric-val">76%</div><div class="metric-label">Module Grade</div></div>
+          <div class="metric-card teal"><div class="metric-val">83.3%</div><div class="metric-label">SFA-EXP-BC (Che Adams)</div></div>
+          <div class="metric-card amber"><div class="metric-val">0.904</div><div class="metric-label">xG ↔ Goals+Assists r</div></div>
+          <div class="metric-card rose"><div class="metric-val">499</div><div class="metric-label">Players Analysed</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROJECT 2 -->
+  <div class="project-card">
+    <div class="project-header">
+      <div>
+        <p class="project-index">PROJECT 02</p>
+        <h3 class="project-title">UK Road Accident Severity Prediction (NHS / DfT)</h3>
+        <p class="project-module">Big Data for Decision Making · Aston University · Grade: 70%</p>
+        <div class="project-tags">
+          <span class="proj-tag big">Big Data</span>
+          <span class="proj-tag ml">Decision Tree</span>
+          <span class="proj-tag viz">Python</span>
+          <span class="proj-tag ml">Feature Engineering</span>
+          <span class="proj-tag stats">Scikit-learn</span>
+        </div>
+      </div>
+      <div class="project-badge" style="background:rgba(244,63,94,0.1);">🚗</div>
+    </div>
+    <div class="project-body">
+      <div class="project-desc">
+        <p>Engineered a <strong>three-source big data pipeline</strong> merging UK Government DfT accident, casualty, and vehicle CSVs (2021) into a single modelling-ready dataframe. Decision tree model achieved <strong>96.88% accuracy</strong> in predicting accident severity — a result directly applicable to insurance risk pricing.</p>
+        <p>Applied 3-sigma outlier removal on engine capacity, dropped 50+ irrelevant columns, and identified the top 15 features via correlation matrix heatmap. Key insight: <strong>Friday is the highest-risk day</strong>; male drivers account for ~62% of accident involvement.</p>
+        <ul class="findings-list">
+          <li>3-source data merge on accident_index (accident + casualty + vehicle tables)</li>
+          <li>Decision Tree: 96.88% accuracy after feature selection and cleaning</li>
+          <li>Friday peaks; Monday lowest — actionable for fleet insurance pricing</li>
+          <li>Slight severity ~75%, Serious ~20%, Fatal ~5% of 2021 UK incidents</li>
+          <li>Insights extracted for policymakers on transport safety infrastructure</li>
+        </ul>
+      </div>
+      <div class="project-viz">
+        <p class="viz-title">▸ Accident Profile &amp; Model Accuracy</p>
+        <div class="chart-wrap">
+          <svg viewBox="0 0 360 240" xmlns="http://www.w3.org/2000/svg" style="font-family:'Space Mono',monospace">
+            <rect width="360" height="240" fill="#111d33" rx="8"/>
+            <!-- Accuracy donut -->
+            <circle cx="80" cy="85" r="55" fill="none" stroke="#1a2d4a" stroke-width="18"/>
+            <circle cx="80" cy="85" r="55" fill="none" stroke="#0ea5e9" stroke-width="18"
+              stroke-dasharray="335 346" stroke-dashoffset="86" transform="rotate(-90,80,85)"/>
+            <text x="80" y="80" text-anchor="middle" fill="#e2e8f0" font-size="16" font-weight="700">96.9%</text>
+            <text x="80" y="95" text-anchor="middle" fill="#94a3b8" font-size="7.5">DT Accuracy</text>
+            <!-- Severity bars -->
+            <text x="155" y="28" fill="#94a3b8" font-size="8">Severity Distribution (2021)</text>
+            <text x="155" y="48" fill="#475569" font-size="7.5">Slight</text>
+            <rect x="185" y="36" width="152" height="13" fill="#14b8a6" rx="2"/>
+            <text x="341" y="47" fill="#14b8a6" font-size="7">75%</text>
+            <text x="155" y="73" fill="#475569" font-size="7.5">Serious</text>
+            <rect x="185" y="61" width="51"  height="13" fill="#f59e0b" rx="2"/>
+            <text x="240" y="72" fill="#f59e0b" font-size="7">20%</text>
+            <text x="155" y="98" fill="#475569" font-size="7.5">Fatal</text>
+            <rect x="185" y="86" width="13"  height="13" fill="#f43f5e" rx="2" opacity="0.9"/>
+            <text x="202" y="97" fill="#f43f5e" font-size="7">5%</text>
+            <!-- Day of week -->
+            <text x="18" y="148" fill="#94a3b8" font-size="8">Accidents by Day (relative frequency)</text>
+            <rect x="18"  y="158" width="32" height="38" fill="#0ea5e9" rx="2" opacity="0.5"/>
+            <text x="34"  y="207" fill="#475569" font-size="7" text-anchor="middle">Mon</text>
+            <rect x="58"  y="151" width="32" height="45" fill="#0ea5e9" rx="2" opacity="0.65"/>
+            <text x="74"  y="207" fill="#475569" font-size="7" text-anchor="middle">Tue</text>
+            <rect x="98"  y="148" width="32" height="48" fill="#0ea5e9" rx="2" opacity="0.75"/>
+            <text x="114" y="207" fill="#475569" font-size="7" text-anchor="middle">Wed</text>
+            <rect x="138" y="150" width="32" height="46" fill="#0ea5e9" rx="2" opacity="0.8"/>
+            <text x="154" y="207" fill="#475569" font-size="7" text-anchor="middle">Thu</text>
+            <rect x="178" y="140" width="32" height="56" fill="#0ea5e9" rx="2"/>
+            <text x="194" y="207" fill="#0ea5e9" font-size="7" text-anchor="middle">Fri ▲</text>
+            <rect x="218" y="145" width="32" height="51" fill="#0ea5e9" rx="2" opacity="0.85"/>
+            <text x="234" y="207" fill="#475569" font-size="7" text-anchor="middle">Sat</text>
+            <rect x="258" y="152" width="32" height="44" fill="#0ea5e9" rx="2" opacity="0.7"/>
+            <text x="274" y="207" fill="#475569" font-size="7" text-anchor="middle">Sun</text>
+            <!-- Gender donut -->
+            <circle cx="330" cy="175" r="24" fill="none" stroke="#1a2d4a" stroke-width="14"/>
+            <circle cx="330" cy="175" r="24" fill="none" stroke="#0ea5e9" stroke-width="14"
+              stroke-dasharray="93 151" stroke-dashoffset="37" transform="rotate(-90,330,175)"/>
+            <text x="330" y="171" text-anchor="middle" fill="#e2e8f0" font-size="8" font-weight="700">62%</text>
+            <text x="330" y="181" text-anchor="middle" fill="#94a3b8" font-size="7">Male</text>
+            <text x="330" y="212" text-anchor="middle" fill="#94a3b8" font-size="7">Driver gender</text>
+            <!-- Pipeline label -->
+            <rect x="18" y="218" width="244" height="18" fill="#0f1a2e" rx="4" stroke="#1a2d4a"/>
+            <text x="26" y="230" fill="#0ea5e9" font-size="7">merge(accident, casualty, vehicle) → 96.88% acc.</text>
+          </svg>
+        </div>
+        <div class="metrics-grid">
+          <div class="metric-card blue"><div class="metric-val">96.88%</div><div class="metric-label">Decision Tree Accuracy</div></div>
+          <div class="metric-card teal"><div class="metric-val">3 CSVs</div><div class="metric-label">Data Sources Merged</div></div>
+          <div class="metric-card amber"><div class="metric-val">50+</div><div class="metric-label">Features Removed</div></div>
+          <div class="metric-card rose"><div class="metric-val">70%</div><div class="metric-label">Module Grade</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROJECT 3 -->
+  <div class="project-card">
+    <div class="project-header">
+      <div>
+        <p class="project-index">PROJECT 03</p>
+        <h3 class="project-title">Business Analytics in Practice — 6-Portfolio Suite</h3>
+        <p class="project-module">BNM863 — Business Analytics in Practice · Aston University</p>
+        <div class="project-tags">
+          <span class="proj-tag ml">Multinomial Logistic</span>
+          <span class="proj-tag stats">Cluster Analysis</span>
+          <span class="proj-tag violet">Conjoint Analysis</span>
+          <span class="proj-tag stats">ARIMA</span>
+          <span class="proj-tag viz">SPSS</span>
+        </div>
+      </div>
+      <div class="project-badge" style="background:rgba(20,184,166,0.1);">📋</div>
+    </div>
+    <div class="project-body">
+      <div class="project-desc">
+        <p><strong>Portfolio 1 — Customer Spend Classification (Fresco):</strong> Multinomial logistic regression predicting Low/Medium/High spend tiers. Final parsimonious model (Value Products + Top Fresco Products) achieved <strong>91.2% accuracy</strong> with R² = 0.777.</p>
+        <p><strong>Portfolio 2 — Bank Customer Clustering:</strong> Hierarchical cluster analysis (425 UK customers, Ward's method). 3-cluster solution: 36.9% / 31.3% / 31.8%. Cluster 3 (skilled workers, homeowners) showed highest credit risk.</p>
+        <p><strong>Portfolio 3 — Smartphone Conjoint Analysis:</strong> Linear regression on 36 product profiles (Price, Screen, Camera, Battery). Pearson r = 0.93 between utility rank and average consumer preference.</p>
+        <p><strong>Portfolio 4 — Airline Passenger Forecasting:</strong> Multiplicative decomposition over 11 years, 12 seasonal factors. Forecast equation: y* = 92.49 + 2.55t. MAE = 34.</p>
+        <p><strong>Portfolio 5 — COVID-19 ARIMA (UK Daily Cases):</strong> ACF lags = 6, PACF lags = 5 → ARIMA(5,1,6). Non-stationarity resolved with first-order differencing.</p>
+        <ul class="findings-list">
+          <li>Churn analysis across digital/physical channels: 16% churn reduction &amp; 22% CLV uplift</li>
+          <li>Predictive churn model: −30% churn, +15% lifespan value for high-risk segments</li>
+          <li>Excel dashboards improved data comprehension by 25% among non-technical stakeholders</li>
+        </ul>
+      </div>
+      <div class="project-viz">
+        <p class="viz-title">▸ Multi-Portfolio Analytics Summary</p>
+        <div class="chart-wrap">
+          <svg viewBox="0 0 360 235" xmlns="http://www.w3.org/2000/svg" style="font-family:'Space Mono',monospace">
+            <rect width="360" height="235" fill="#111d33" rx="8"/>
+            <!-- Accuracy donut -->
+            <circle cx="68" cy="75" r="50" fill="none" stroke="#1a2d4a" stroke-width="16"/>
+            <circle cx="68" cy="75" r="50" fill="none" stroke="#0ea5e9" stroke-width="16"
+              stroke-dasharray="287 314" stroke-dashoffset="78" transform="rotate(-90,68,75)"/>
+            <text x="68" y="70" text-anchor="middle" fill="#e2e8f0" font-size="15" font-weight="700">91.2%</text>
+            <text x="68" y="84" text-anchor="middle" fill="#94a3b8" font-size="7">Logistic Acc.</text>
+            <!-- Cluster bars -->
+            <text x="140" y="22" fill="#94a3b8" font-size="8">Ward's 3-Cluster Split</text>
+            <text x="140" y="40" fill="#475569" font-size="7.5">Cluster 1 (Low Risk)</text>
+            <rect x="230" y="29" width="93" height="12" fill="#0ea5e9" rx="2"/>
+            <text x="327" y="39" fill="#0ea5e9" font-size="7"> 36.9%</text>
+            <text x="140" y="62" fill="#475569" font-size="7.5">Cluster 2 (High Risk)</text>
+            <rect x="230" y="51" width="79" height="12" fill="#f43f5e" rx="2" opacity="0.85"/>
+            <text x="313" y="61" fill="#f43f5e" font-size="7"> 31.3%</text>
+            <text x="140" y="84" fill="#475569" font-size="7.5">Cluster 3 (Mixed)</text>
+            <rect x="230" y="73" width="80" height="12" fill="#f59e0b" rx="2" opacity="0.8"/>
+            <text x="314" y="83" fill="#f59e0b" font-size="7"> 31.8%</text>
+            <!-- Metric tiles -->
+            <rect x="140" y="102" width="100" height="42" fill="#0f1a2e" rx="6" stroke="#1a2d4a"/>
+            <text x="190" y="118" text-anchor="middle" fill="#14b8a6" font-size="13" font-weight="700">r = 0.93</text>
+            <text x="190" y="132" text-anchor="middle" fill="#475569" font-size="7">Conjoint Utility Rank</text>
+            <rect x="250" y="102" width="100" height="42" fill="#0f1a2e" rx="6" stroke="#1a2d4a"/>
+            <text x="300" y="118" text-anchor="middle" fill="#8b5cf6" font-size="10" font-weight="700">ARIMA(5,1,6)</text>
+            <text x="300" y="132" text-anchor="middle" fill="#475569" font-size="7">COVID Forecast</text>
+            <!-- Churn stats -->
+            <line x1="18" y1="158" x2="342" y2="158" stroke="#1a2d4a" stroke-width="1"/>
+            <text x="18" y="174" fill="#94a3b8" font-size="8">Customer Churn Analysis</text>
+            <rect x="18"  y="180" width="90" height="42" fill="#0f1a2e" rx="6" stroke="#1a2d4a"/>
+            <text x="63"  y="197" text-anchor="middle" fill="#0ea5e9" font-size="13" font-weight="700">−16%</text>
+            <text x="63"  y="211" text-anchor="middle" fill="#475569" font-size="7">Churn Reduction</text>
+            <rect x="118" y="180" width="90" height="42" fill="#0f1a2e" rx="6" stroke="#1a2d4a"/>
+            <text x="163" y="197" text-anchor="middle" fill="#14b8a6" font-size="13" font-weight="700">+22%</text>
+            <text x="163" y="211" text-anchor="middle" fill="#475569" font-size="7">CLV Increase</text>
+            <rect x="218" y="180" width="90" height="42" fill="#0f1a2e" rx="6" stroke="#1a2d4a"/>
+            <text x="263" y="197" text-anchor="middle" fill="#f59e0b" font-size="13" font-weight="700">−30%</text>
+            <text x="263" y="211" text-anchor="middle" fill="#475569" font-size="7">Predictive Churn</text>
+          </svg>
+        </div>
+        <div class="metrics-grid">
+          <div class="metric-card blue"><div class="metric-val">91.2%</div><div class="metric-label">Classification Accuracy</div></div>
+          <div class="metric-card violet"><div class="metric-val" style="color:var(--violet)">r = 0.93</div><div class="metric-label">Conjoint Utility Rank r</div></div>
+          <div class="metric-card amber"><div class="metric-val">MAE 34</div><div class="metric-label">Airline Forecast Error</div></div>
+          <div class="metric-card teal"><div class="metric-val">−30%</div><div class="metric-label">Predictive Churn Reduction</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROJECT 4 - House Price -->
+  <div class="project-card">
+    <div class="project-header">
+      <div>
+        <p class="project-index">PROJECT 04</p>
+        <h3 class="project-title">House Price Prediction — ML Benchmarking Pipeline</h3>
+        <p class="project-module">Individual Assignment · Python / Scikit-learn</p>
+        <div class="project-tags">
+          <span class="proj-tag ml">Neural Networks</span>
+          <span class="proj-tag ml">SVM</span>
+          <span class="proj-tag ml">Random Forest</span>
+          <span class="proj-tag viz">Python</span>
+          <span class="proj-tag stats">Feature Selection</span>
+        </div>
+      </div>
+      <div class="project-badge" style="background:rgba(245,158,11,0.1);">🏠</div>
+    </div>
+    <div class="project-body">
+      <div class="project-desc">
+        <p>Built an end-to-end ML pipeline on a <strong>1,144-row real estate dataset</strong> (81 variables). Selected 11 domain-informed features after correlation analysis, removed 68+ outliers, and benchmarked 6 supervised models against a Naïve Bayes baseline (MAE: £78,517).</p>
+        <p><strong>Neural Networks</strong> achieved the best MAE of £19,921 — a <strong>75% improvement</strong> over baseline. SVM with Polynomial kernel (C=69, ε=0.35, γ=1.5) placed second (MAE: £20,669). Grid search applied for hyperparameter tuning across all models.</p>
+        <ul class="findings-list">
+          <li>1st Floor square footage is the strongest continuous predictor of sale price</li>
+          <li>NoRidge &amp; NridgHt neighbourhoods command the highest premiums (≈£450K median)</li>
+          <li>Good basement exposure (BsmtExposure) consistently yields higher prices</li>
+          <li>Decision Tree improved 7% with depth tuning (default → max_depth=15)</li>
+        </ul>
+      </div>
+      <div class="project-viz">
+        <p class="viz-title">▸ MAE Comparison: All Models vs Baseline (£78.5K)</p>
+        <div class="chart-wrap">
+          <svg viewBox="0 0 360 210" xmlns="http://www.w3.org/2000/svg" style="font-family:'Space Mono',monospace">
+            <rect width="360" height="210" fill="#111d33" rx="8"/>
+            <!-- Baseline -->
+            <line x1="28" y1="22" x2="340" y2="22" stroke="#f43f5e" stroke-width="1" stroke-dasharray="4,3" opacity="0.7"/>
+            <text x="344" y="26" fill="#f43f5e" font-size="7">Baseline £78.5K</text>
+            <!-- Scale: 78500 = full 170px; each 1000 = 2.16px -->
+            <!-- Neural Net 19921 → 43px -->
+            <rect x="32"  y="137" width="28" height="43"  fill="#0ea5e9" rx="2"/>
+            <text x="46"  y="192" fill="#94a3b8" font-size="7" text-anchor="middle">NN</text>
+            <text x="46"  y="132" fill="#0ea5e9" font-size="7" text-anchor="middle">£19.9K</text>
+            <!-- SVM tuned 20669 → 45px -->
+            <rect x="72"  y="135" width="28" height="45"  fill="#0ea5e9" rx="2" opacity="0.85"/>
+            <text x="86"  y="192" fill="#94a3b8" font-size="7" text-anchor="middle">SVM</text>
+            <text x="86"  y="130" fill="#0ea5e9" font-size="7" text-anchor="middle">£20.7K</text>
+            <!-- Random Forest 22500 → 49px -->
+            <rect x="112" y="131" width="28" height="49"  fill="#14b8a6" rx="2" opacity="0.85"/>
+            <text x="126" y="192" fill="#94a3b8" font-size="7" text-anchor="middle">RF</text>
+            <text x="126" y="126" fill="#14b8a6" font-size="7" text-anchor="middle">£22.5K</text>
+            <!-- DT tuned 25414 → 55px -->
+            <rect x="152" y="125" width="28" height="55"  fill="#14b8a6" rx="2" opacity="0.7"/>
+            <text x="166" y="192" fill="#94a3b8" font-size="7" text-anchor="middle">DTree</text>
+            <text x="166" y="120" fill="#14b8a6" font-size="7" text-anchor="middle">£25.4K</text>
+            <!-- KNN 30000 → 65px -->
+            <rect x="192" y="115" width="28" height="65"  fill="#f59e0b" rx="2" opacity="0.75"/>
+            <text x="206" y="192" fill="#94a3b8" font-size="7" text-anchor="middle">KNN</text>
+            <text x="206" y="110" fill="#f59e0b" font-size="7" text-anchor="middle">£30K</text>
+            <!-- LinReg 26000 → 56px -->
+            <rect x="232" y="124" width="28" height="56"  fill="#f59e0b" rx="2" opacity="0.6"/>
+            <text x="246" y="192" fill="#94a3b8" font-size="7" text-anchor="middle">LinReg</text>
+            <text x="246" y="119" fill="#f59e0b" font-size="7" text-anchor="middle">£26K</text>
+            <!-- Baseline bar SVM default 70860 → 153px -->
+            <rect x="272" y="27"  width="28" height="153" fill="#f43f5e" rx="2" opacity="0.4"/>
+            <text x="286" y="192" fill="#94a3b8" font-size="7" text-anchor="middle">SVM</text>
+            <text x="286" y="205" fill="#94a3b8" font-size="7" text-anchor="middle">def</text>
+            <text x="286" y="22"  fill="#f43f5e" font-size="7" text-anchor="middle">£70.9K</text>
+            <!-- 75% badge -->
+            <rect x="310" y="100" width="42" height="38" fill="#0f1a2e" rx="6" stroke="#0ea5e9" stroke-width="1"/>
+            <text x="331" y="116" text-anchor="middle" fill="#0ea5e9" font-size="11" font-weight="700">−75%</text>
+            <text x="331" y="128" text-anchor="middle" fill="#475569" font-size="7">vs baseline</text>
+          </svg>
+        </div>
+        <div class="metrics-grid">
+          <div class="metric-card blue"><div class="metric-val">£19,921</div><div class="metric-label">Best MAE (Neural Network)</div></div>
+          <div class="metric-card teal"><div class="metric-val">−75%</div><div class="metric-label">Improvement vs Baseline</div></div>
+          <div class="metric-card amber"><div class="metric-val">6</div><div class="metric-label">Models Benchmarked</div></div>
+          <div class="metric-card rose"><div class="metric-val">1,144</div><div class="metric-label">Rows in Dataset</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- PROJECT 5 - Software Analytics / UK Vaccinations -->
+  <div class="project-card">
+    <div class="project-header">
+      <div>
+        <p class="project-index">PROJECT 05</p>
+        <h3 class="project-title">UK COVID-19 Vaccination Programme Analytics</h3>
+        <p class="project-module">Software Analytics (BNM861) · Aston University · Grade: 72%</p>
+        <div class="project-tags">
+          <span class="proj-tag ml">OLS Regression</span>
+          <span class="proj-tag viz">Python / Pandas</span>
+          <span class="proj-tag stats">Chi-Square Test</span>
+          <span class="proj-tag stats">T-Test</span>
+          <span class="proj-tag violet">Bokeh / Matplotlib</span>
+        </div>
+      </div>
+      <div class="project-badge" style="background:rgba(20,184,166,0.1);">💉</div>
+    </div>
+    <div class="project-body">
+      <div class="project-desc">
+        <p>End-to-end exploratory and inferential analysis of the <strong>UK Government COVID-19 vaccination dataset</strong> (early 2021 – mid 2022), covering First, Second, and Third dose rollout across all UK regions (England, Scotland, Wales, Northern Ireland).</p>
+        <p>Conducted a full 8-step analytical pipeline in Python: descriptive statistics, missing value treatment (<code style="font-family:var(--mono);font-size:0.8em;color:var(--electric);background:rgba(14,165,233,0.08);padding:0.1em 0.35em;border-radius:3px;">fillna(0)</code>), histogram and scatter plot visualisations, contingency table construction, Chi-square independence test, subset t-tests, grouped aggregations, and finally an <strong>OLS multiple regression model</strong> using Statsmodels and Bokeh.</p>
+        <p>The final regression model predicted ThirdDose uptake from First and Second doses, working day, region, and month — achieving an <strong>R² improvement from ~0.3 (simple) to ~0.5 (multiple)</strong>. All p-values on predictors were statistically significant.</p>
+        <ul class="findings-list">
+          <li>First dose distribution positively skewed — peak at ~2,500 doses; majority between 0–5,000</li>
+          <li>Strong positive correlation between First and Second dose uptake (scatter plot confirms linear relationship)</li>
+          <li>Chi-square test: areaName and day of week are <strong>independent</strong> (p &gt; 0.05 — fail to reject H₀)</li>
+          <li>T-test on England subset: no significant difference between First and Second dose means (p = 0.1246)</li>
+          <li>Q3 showed highest median First Dose uptake (~15,000); Q1/Q2/Q4 all below 1,000 median</li>
+          <li>OLS model: ThirdDose = −1.24×10⁵ + 3.84·FirstDose + 8.63·SecondDose + 1,482·WorkingDay + region dummies + 5,912·month</li>
+        </ul>
+      </div>
+      <div class="project-viz">
+        <p class="viz-title">▸ Vaccination Rollout Analytics — Key Outputs</p>
+        <div class="chart-wrap">
+          <svg viewBox="0 0 360 280" xmlns="http://www.w3.org/2000/svg" style="font-family:'Space Mono',monospace">
+            <rect width="360" height="280" fill="#111d33" rx="8"/>
+
+            <!-- SECTION LABEL: Dose Distribution -->
+            <text x="16" y="18" fill="#94a3b8" font-size="8">First Dose Distribution (histogram shape)</text>
+
+            <!-- Simulated histogram bars - positively skewed -->
+            <rect x="16"  y="50" width="18" height="5"  fill="#0ea5e9" rx="1" opacity="0.6"/>
+            <rect x="36"  y="35" width="18" height="20" fill="#0ea5e9" rx="1" opacity="0.7"/>
+            <rect x="56"  y="22" width="18" height="33" fill="#0ea5e9" rx="1" opacity="0.85"/>
+            <rect x="76"  y="28" width="18" height="27" fill="#0ea5e9" rx="1"/>
+            <rect x="96"  y="34" width="18" height="21" fill="#0ea5e9" rx="1" opacity="0.9"/>
+            <rect x="116" y="40" width="18" height="15" fill="#0ea5e9" rx="1" opacity="0.8"/>
+            <rect x="136" y="44" width="18" height="11" fill="#0ea5e9" rx="1" opacity="0.7"/>
+            <rect x="156" y="48" width="18" height="7"  fill="#0ea5e9" rx="1" opacity="0.6"/>
+            <rect x="176" y="51" width="18" height="4"  fill="#0ea5e9" rx="1" opacity="0.5"/>
+            <rect x="196" y="52" width="18" height="3"  fill="#0ea5e9" rx="1" opacity="0.4"/>
+            <text x="16"  y="62" fill="#475569" font-size="6.5">0</text>
+            <text x="96"  y="62" fill="#475569" font-size="6.5">2,500</text>
+            <text x="196" y="62" fill="#475569" font-size="6.5">5,000+</text>
+            <text x="8"   y="55" fill="#475569" font-size="6" text-anchor="middle">Freq</text>
+            <text x="110" y="71" fill="#0ea5e9" font-size="7" text-anchor="middle">Peak ≈ 2,500 · Positively Skewed</text>
+
+            <!-- DIVIDER -->
+            <line x1="230" y1="10" x2="230" y2="75" stroke="#1a2d4a" stroke-width="1"/>
+
+            <!-- Q Boxplot Summary (simplified) -->
+            <text x="238" y="18" fill="#94a3b8" font-size="8">Median FirstDose by Quarter</text>
+            <text x="238" y="32" fill="#475569" font-size="7.5">Q1</text>
+            <rect x="258" y="25" width="8"  height="10" fill="#f43f5e" rx="1" opacity="0.7"/>
+            <text x="270" y="33" fill="#f43f5e" font-size="7">&lt;1K</text>
+            <text x="238" y="46" fill="#475569" font-size="7.5">Q2</text>
+            <rect x="258" y="39" width="10" height="10" fill="#f59e0b" rx="1" opacity="0.7"/>
+            <text x="272" y="47" fill="#f59e0b" font-size="7">~1K</text>
+            <text x="238" y="60" fill="#475569" font-size="7.5">Q3</text>
+            <rect x="258" y="53" width="95" height="10" fill="#14b8a6" rx="1"/>
+            <text x="357" y="61" fill="#14b8a6" font-size="7">~15K ▲</text>
+            <text x="238" y="74" fill="#475569" font-size="7.5">Q4</text>
+            <rect x="258" y="67" width="8"  height="10" fill="#f43f5e" rx="1" opacity="0.6"/>
+            <text x="270" y="75" fill="#f43f5e" font-size="7">&lt;1K</text>
+
+            <!-- DIVIDER H -->
+            <line x1="16" y1="82" x2="344" y2="82" stroke="#1a2d4a" stroke-width="1"/>
+
+            <!-- SCATTER PLOT: FirstDose vs SecondDose -->
+            <text x="16" y="96" fill="#94a3b8" font-size="8">FirstDose vs SecondDose (scatter — strong positive r)</text>
+            <!-- Diagonal reference line -->
+            <line x1="30" y1="175" x2="175" y2="100" stroke="#1a2d4a" stroke-width="1" stroke-dasharray="3,2"/>
+            <!-- Scatter points -->
+            <circle cx="38"  cy="172" r="2.5" fill="#0ea5e9" opacity="0.6"/>
+            <circle cx="50"  cy="163" r="2.5" fill="#0ea5e9" opacity="0.65"/>
+            <circle cx="62"  cy="157" r="2.5" fill="#0ea5e9" opacity="0.7"/>
+            <circle cx="72"  cy="148" r="2.5" fill="#0ea5e9" opacity="0.75"/>
+            <circle cx="82"  cy="143" r="2.5" fill="#0ea5e9" opacity="0.8"/>
+            <circle cx="90"  cy="138" r="2.5" fill="#0ea5e9" opacity="0.8"/>
+            <circle cx="100" cy="132" r="2.5" fill="#0ea5e9" opacity="0.85"/>
+            <circle cx="112" cy="126" r="2.5" fill="#0ea5e9" opacity="0.85"/>
+            <circle cx="122" cy="122" r="2.5" fill="#0ea5e9" opacity="0.9"/>
+            <circle cx="132" cy="117" r="2.5" fill="#0ea5e9" opacity="0.9"/>
+            <circle cx="145" cy="113" r="2.5" fill="#0ea5e9" opacity="0.9"/>
+            <circle cx="158" cy="107" r="2.5" fill="#0ea5e9" opacity="0.95"/>
+            <circle cx="172" cy="103" r="2.5" fill="#0ea5e9"/>
+            <!-- Outlier -->
+            <circle cx="155" cy="95"  r="3"   fill="#f43f5e" opacity="0.8"/>
+            <text x="159" cy="92" y="93" fill="#f43f5e" font-size="6.5">outlier</text>
+            <text x="16"  y="183" fill="#475569" font-size="6.5">→ FirstDose</text>
+            <text x="16"  y="172" fill="#475569" font-size="6.5" transform="rotate(-90,16,145)">SecondDose ↑</text>
+
+            <!-- DIVIDER V2 -->
+            <line x1="195" y1="82" x2="195" y2="190" stroke="#1a2d4a" stroke-width="1"/>
+
+            <!-- OLS REGRESSION RESULTS -->
+            <text x="204" y="96" fill="#94a3b8" font-size="8">OLS Multiple Regression</text>
+            <text x="204" y="108" fill="#475569" font-size="7">Dependent: ThirdDose</text>
+
+            <text x="204" y="122" fill="#14b8a6" font-size="7">R² simple LR</text>
+            <rect x="283" y="114" width="32" height="10" fill="#1a2d4a" rx="2"/>
+            <rect x="283" y="114" width="10" height="10" fill="#f59e0b" rx="2"/>
+            <text x="318" y="122" fill="#f59e0b" font-size="7">~0.30</text>
+
+            <text x="204" y="136" fill="#14b8a6" font-size="7">R² multiple reg</text>
+            <rect x="283" y="128" width="32" height="10" fill="#1a2d4a" rx="2"/>
+            <rect x="283" y="128" width="16" height="10" fill="#0ea5e9" rx="2"/>
+            <text x="318" y="136" fill="#0ea5e9" font-size="7">~0.50</text>
+
+            <text x="204" y="150" fill="#475569" font-size="6.5">Predictors (all p&lt;0.05):</text>
+            <text x="204" y="161" fill="#text-dim" font-size="6.5" fill="#94a3b8">FirstDose · SecondDose</text>
+            <text x="204" y="171" fill="#94a3b8" font-size="6.5">WorkingDay · areaName</text>
+            <text x="204" y="181" fill="#94a3b8" font-size="6.5">month</text>
+
+            <!-- DIVIDER H2 -->
+            <line x1="16" y1="193" x2="344" y2="193" stroke="#1a2d4a" stroke-width="1"/>
+
+            <!-- Chi-square + T-test results -->
+            <text x="16" y="207" fill="#94a3b8" font-size="8">Statistical Tests</text>
+
+            <rect x="16"  y="214" width="150" height="54" fill="#0f1a2e" rx="6" stroke="#1a2d4a"/>
+            <text x="91"  y="227" text-anchor="middle" fill="#475569" font-size="7">Chi-Square: areaName × day</text>
+            <text x="91"  y="240" text-anchor="middle" fill="#f59e0b" font-size="11" font-weight="700">p &gt; 0.05</text>
+            <text x="91"  y="254" text-anchor="middle" fill="#475569" font-size="6.5">Fail to reject H₀ — Independent</text>
+            <text x="91"  y="263" text-anchor="middle" fill="#475569" font-size="6.5">No sig. relationship</text>
+
+            <rect x="178" y="214" width="166" height="54" fill="#0f1a2e" rx="6" stroke="#1a2d4a"/>
+            <text x="261" y="227" text-anchor="middle" fill="#475569" font-size="7">T-Test: England FirstDose vs SecondDose</text>
+            <text x="261" y="240" text-anchor="middle" fill="#0ea5e9" font-size="11" font-weight="700">p = 0.1246</text>
+            <text x="261" y="254" text-anchor="middle" fill="#475569" font-size="6.5">Fail to reject H₀ — No sig. difference</text>
+            <text x="261" y="263" text-anchor="middle" fill="#475569" font-size="6.5">between dose means in England</text>
+          </svg>
+        </div>
+        <div class="metrics-grid">
+          <div class="metric-card teal"><div class="metric-val">~0.50</div><div class="metric-label">OLS R² (Multiple Regression)</div></div>
+          <div class="metric-card blue"><div class="metric-val">8</div><div class="metric-label">Analysis Steps Completed</div></div>
+          <div class="metric-card amber"><div class="metric-val">p=0.125</div><div class="metric-label">T-Test (First vs Second Dose)</div></div>
+          <div class="metric-card rose"><div class="metric-val">72%</div><div class="metric-label">Module Grade</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PUBLICATIONS -->
+<section id="publications">
+  <div class="section-header">
+    <p class="section-eyebrow">04 // Research &amp; Publications</p>
+    <h2 class="section-title">Publications</h2>
+    <div class="section-divider"></div>
+  </div>
+  <div class="pub-card">
+    <p class="pub-type">📖 Book Chapter · IGI Global · 2026</p>
+    <p class="pub-title">IoT-Enabled Circular Supply Chains: Advancing Sustainability in the United States Logistics and Distribution</p>
+    <p class="pub-meta">
+      Irtisham, M. R., Waaje, A., Saiyed, S., Roshid, M. M., &amp; Haque, M. A. (2026). In <em>IoT-Enabled Circular Supply Chains: Advancing Sustainability</em>. IGI Global. &nbsp;
+      <a href="https://doi.org/10.4018/979-8-3373-2454-8.ch002" target="_blank">DOI: 10.4018/979-8-3373-2454-8.ch002</a> &nbsp; <a href="https://digitalcommons.mtu.edu/michigantech-p2/2253/" target="_blank">Michigan Tech Repository ↗</a>
+    </p>
+  </div>
+  <div class="pub-card">
+    <p class="pub-type">📕 Book Contribution · Routledge · 2025</p>
+    <p class="pub-title">Industry 5.0: Concepts and Strategies for Digital Transformation</p>
+    <p class="pub-meta">
+      Edited by Mahender Singh Kaswan, Rajeev Rathi, and Jose Arturo Garza-Reyes. Routledge, 2025. ISBN: 9781032878218. &nbsp;
+      <a href="https://www.routledge.com/Industry-50-Concepts-and-Strategies-for-Digital-Transformation/Kaswan-Rathi-Garza-Reyes/p/book/9781032878218" target="_blank">Publisher Page ↗</a>
+    </p>
+  </div>
+
+
+
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="section-header">
+    <p class="section-eyebrow">05 // Education</p>
+    <h2 class="section-title">Academic Background</h2>
+    <div class="section-divider"></div>
+  </div>
+  <div class="edu-exp-grid">
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <p class="timeline-year">Jan 2023 – Jan 2024</p>
+        <p class="timeline-role">MSc Business Analytics</p>
+        <p class="timeline-org">Aston University · Birmingham, UK</p>
+        <p class="timeline-detail">
+          <span class="grade-chip">Big Data 70%</span>
+          <span class="grade-chip">Software Analytics 72%</span>
+          <span class="grade-chip">Performance Analytics 76%</span><br><br>
+          Modules: Big Data for Decision Making, Software Analytics, Performance Analytics, Business Analytics in Practice.
+        </p>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot" style="background:var(--teal)"></div>
+        <p class="timeline-year">Jan 2016 – Apr 2020</p>
+        <p class="timeline-role">BBA — Major in Marketing</p>
+        <p class="timeline-org">North South University · Dhaka, Bangladesh</p>
+        <p class="timeline-detail">
+          <span class="grade-chip" style="background:rgba(20,184,166,0.1)">Entrepreneurship 90%</span>
+          <span class="grade-chip" style="background:rgba(20,184,166,0.1)">Strategic Marketing 88%</span><br><br>
+          Senior Member — Marketing Club of NSU (2016–17). Participated in Innoventure, Socio Camp, Hashtag Marketing business case competitions.
+        </p>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot" style="background:var(--amber)"></div>
+        <p class="timeline-year">2012 – 2015</p>
+        <p class="timeline-role">O Levels &amp; A Levels</p>
+        <p class="timeline-org">University of Cambridge Curriculum</p>
+        <p class="timeline-detail">Cambridge international qualifications providing the analytical and critical thinking foundation for further study.</p>
+      </div>
+    </div>
+    <div>
+      <p style="font-family:var(--mono);font-size:0.7rem;color:var(--electric);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:1.1rem;">Techniques Across All Projects</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.7rem;">
+        <div style="background:var(--navy-card);border:1px solid var(--navy-border);border-radius:8px;padding:1rem;">
+          <p style="font-size:0.77rem;color:var(--electric);margin-bottom:0.45rem;font-weight:600;">Supervised ML</p>
+          <p style="font-size:0.77rem;color:var(--text-dim);">Decision Trees, Random Forest, SVM (Poly/RBF), Neural Networks, KNN, Logistic Regression</p>
+        </div>
+        <div style="background:var(--navy-card);border:1px solid var(--navy-border);border-radius:8px;padding:1rem;">
+          <p style="font-size:0.77rem;color:var(--teal);margin-bottom:0.45rem;font-weight:600;">Frontier Analysis</p>
+          <p style="font-size:0.77rem;color:var(--text-dim);">DEA (CRS/VRS, PIM-DEA), COLS, MOLS, SFA (Half-Normal &amp; Exponential), Translog</p>
+        </div>
+        <div style="background:var(--navy-card);border:1px solid var(--navy-border);border-radius:8px;padding:1rem;">
+          <p style="font-size:0.77rem;color:var(--amber);margin-bottom:0.45rem;font-weight:600;">Time Series</p>
+          <p style="font-size:0.77rem;color:var(--text-dim);">ARIMA, Multiplicative Decomposition, Moving Averages, Seasonal Factor Adjustment</p>
+        </div>
+        <div style="background:var(--navy-card);border:1px solid var(--navy-border);border-radius:8px;padding:1rem;">
+          <p style="font-size:0.77rem;color:var(--violet);margin-bottom:0.45rem;font-weight:600;">Unsupervised &amp; Survey</p>
+          <p style="font-size:0.77rem;color:var(--text-dim);">Hierarchical Clustering (Ward's), K-Means, Conjoint Analysis, Market Basket Analysis</p>
+        </div>
+        <div style="background:var(--navy-card);border:1px solid var(--navy-border);border-radius:8px;padding:1rem;">
+          <p style="font-size:0.77rem;color:var(--rose);margin-bottom:0.45rem;font-weight:600;">BI &amp; Reporting</p>
+          <p style="font-size:0.77rem;color:var(--text-dim);">Power BI KPI Dashboards, Tableau, Excel (Advanced), Process Mapping, Python Automation</p>
+        </div>
+        <div style="background:var(--navy-card);border:1px solid var(--navy-border);border-radius:8px;padding:1rem;">
+          <p style="font-size:0.77rem;color:var(--text-dim);margin-bottom:0.45rem;font-weight:600;">Soft Skills</p>
+          <p style="font-size:0.77rem;color:var(--text-faint);">Team Leadership, Stakeholder Communication, Conflict Resolution, Result-Oriented, Self-Starter</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-header">
+    <p class="section-eyebrow">06 // Contact</p>
+    <h2 class="section-title">Let's Talk</h2>
+    <div class="section-divider"></div>
+  </div>
+  <div class="contact-grid">
+    <div class="contact-text">
+      <p>I'm currently a Marketing Analyst at Emporia Centre Ltd. and open to exploring <strong style="color:var(--text)">Data Analyst, Marketing Analyst, CRM Analyst</strong>, or BI roles. I bring published research, hands-on industry experience (MySQL, Power BI, Salesforce, Google Analytics), and deep analytical rigour.</p>
+      <p style="margin-top:1rem;">Based in Birmingham, West Midlands. Open to hybrid and remote opportunities across the UK.</p>
+      <div class="contact-links">
+        <a class="contact-link" href="https://www.linkedin.com/in/rafid-irtisham-a3681a195" target="_blank">
+          <div class="contact-link-icon">in</div>
+          <span>linkedin.com/in/rafid-irtisham-a3681a195</span>
+        </a>
+        <a class="contact-link" href="mailto:mdrafidirtisham@gmail.com">
+          <div class="contact-link-icon">@</div>
+          <span>mdrafidirtisham@gmail.com</span>
+        </a>
+        <a class="contact-link" href="tel:+8801733273230">
+          <div class="contact-link-icon">📞</div>
+          <span>+88 01733 273230</span>
+        </a>
+        <a class="contact-link" href="https://github.com/mdrafidirtisham" target="_blank">
+          <div class="contact-link-icon" style="font-family:var(--mono);font-size:0.68rem;">gh</div>
+          <span>github.com/mdrafidirtisham</span>
+        </a>
+      </div>
+    </div>
+    <div>
+      <div class="contact-form">
+        <input class="form-input" type="text" placeholder="Your Name">
+        <input class="form-input" type="email" placeholder="Your Email">
+        <input class="form-input" type="text" placeholder="Subject — e.g. Data Analyst Role at [Company]">
+        <textarea class="form-input" placeholder="Your message..."></textarea>
+        <a href="mailto:mdrafidirtisham@gmail.com" class="btn-primary" style="text-align:center;">Send via Email</a>
+      </div>
+      <p style="font-size:0.75rem;color:var(--text-faint);margin-top:0.75rem;">Or use the form to draft your message, then click to open in your email client.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2025 Mohammad Rafid Irtisham · Birmingham, UK · Marketing Analyst @ Emporia Centre</p>
+  <p>MSc Business Analytics · Aston University · mdrafidirtisham@gmail.com</p>
+</footer>
+
+<script>
+  // Counter animation
+  function animateCounters() {
+    document.querySelectorAll('[data-target]').forEach(el => {
+      const target = parseInt(el.getAttribute('data-target'));
+      const suffix = el.getAttribute('data-suffix') || '';
+      let current = 0;
+      const step = target / (1800 / 16);
+      const timer = setInterval(() => {
+        current += step;
+        if (current >= target) { current = target; clearInterval(timer); }
+        el.textContent = Math.floor(current).toLocaleString() + suffix;
+      }, 16);
+    });
+  }
+  function animateSkills() {
+    document.querySelectorAll('.skill-bar-fill').forEach(bar => {
+      setTimeout(() => { bar.style.width = bar.getAttribute('data-pct') + '%'; }, 200);
+    });
+  }
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        if (e.target.classList.contains('stats-bar')) animateCounters();
+  
+        if (e.target.id === 'skills-list') animateSkills();
+      }
+    });
+  }, { threshold: 0.3 });
+  document.querySelector('.stats-bar') && io.observe(document.querySelector('.stats-bar'));
+  document.getElementById('skills-list') && io.observe(document.getElementById('skills-list'));
+
+  // Smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const t = document.querySelector(a.getAttribute('href'));
+      if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+    });
+  });
+
+  // Fade-in cards
+  const co = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.style.opacity = '1'; e.target.style.transform = 'translateY(0)'; }
+    });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.project-card,.timeline-item,.exp-card,.pub-card').forEach(c => {
+    c.style.opacity = '0'; c.style.transform = 'translateY(18px)';
+    c.style.transition = 'opacity 0.55s ease, transform 0.55s ease';
+    co.observe(c);
+  });
+</script>
+</body>
+</html>
